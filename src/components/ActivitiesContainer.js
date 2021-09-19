@@ -6,8 +6,7 @@ function ActivitiesContainer({activities}){
     const activityCards = activities.map((activity) => {
         return <ActivityCard key = {activity.id} 
                    activity = {activity}
-                   /*handleDeleteBook={handleDeleteBook}
-                   handleEditBook = {handleEditBook}*/ />
+                    />
     }) 
 
 
