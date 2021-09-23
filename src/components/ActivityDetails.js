@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import {useParams} from 'react-router-dom';
+import Messages from './Messages';
 
 
 function ActivityDetails(activities){
@@ -8,7 +9,7 @@ function ActivityDetails(activities){
     const {id} = useParams()
 
     useEffect(() =>{
-        fetch(`http://localhost:3000/activity/${id}`)
+        fetch(`http://localhost:3000/activities/${id}`)
         .then((res) => res.json())
         .then(activity => setActivity(activity))
 
@@ -16,7 +17,7 @@ function ActivityDetails(activities){
 
 
     function handleDeleteActivity(id) {
-        fetch(`http://localhost:3000/activity/${id}`, {
+        fetch(`http://localhost:3000/activities/${id}`, {
           method: "DELETE",
         })
           .then((r) => r.json())
@@ -39,7 +40,7 @@ function ActivityDetails(activities){
                     <p>{activity.location}</p>
                     <p>{activity.post}</p>
                 </div>
-                <Message activity={activity}/>
+                <Messages activity={activity}/>
                 <button onClick = {handleDeleteActivity}>Delete This Activity!</button>
             </div>}
         </div>

@@ -5,7 +5,6 @@ import NavBar from "./NavBar";
 function Home(){
 
     
-    
 
 
     return(
@@ -14,7 +13,6 @@ function Home(){
 
             </div>
             <h1>
-                Welcome to the Home Page!
                 <NavBar />
             </h1>
         </div>

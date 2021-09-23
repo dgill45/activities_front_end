@@ -1,32 +1,38 @@
 import React, {useEffect, useState} from "react"
 import {NavLink} from "react-router-dom"
+import Login from "./Login";
 
 
-function NavBar(){
-
+function NavBar({onLogin, onLogout}){
 
     const [user, setUser] = useState(null);
 
-    function handleLogin(){
-        useEffect(() => {
+    
+
+         useEffect(() => {
         fetch("/me").then((response) => {
             if (response.ok) {
             response.json().then((user) => setUser(user));
             }
         });
         }, []);
+      
+    
+    
+    function handleLogin(){
+         onLogin(setUser)
+
     }
 
     function handleLogout() {
         fetch("/logout", {
           method: "DELETE",
         }).then(() => onLogout());
-      }
+    };
 
     return (
         <nav className="navbar">
-            <h1 className="display-4">Welcome to the Activities App!</h1>
-            <p className="lead">For people who want to live life offline.</p>
+            
             <header className="jumbotron">
                 <div className= "nav-link-container flex-row">
                     

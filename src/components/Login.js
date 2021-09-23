@@ -1,3 +1,6 @@
+import React, {useState} from 'react'
+
+
 function Login({ onLogin }) {
     const [username, setUsername] = useState("");
   
@@ -25,3 +28,5 @@ function Login({ onLogin }) {
       </form>
     );
   }
+
+  export default Login;

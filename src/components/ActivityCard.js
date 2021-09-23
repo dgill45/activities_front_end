@@ -1,6 +1,7 @@
 import React from "react";
+import {Link} from "react-router-dom"
 
-function ActivityCard({name, date, location, post}){
+function ActivityCard({name, date, location, post, id}){
 
     return (
         <div className ="card">
@@ -10,6 +11,9 @@ function ActivityCard({name, date, location, post}){
                 <p>{location}</p>
                 <p>{post}</p>
             </div>
+                <Link to ={`/activities/${id}`}> 
+                    <button className ="clicked">View this Activity</button>
+                </Link>
             <button className ="clicked">View this Activity</button>
 
         </div>
